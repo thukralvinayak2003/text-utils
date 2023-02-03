@@ -85,7 +85,7 @@ export default function TextForm(props) {
           words
         </p>
         <h2>Preview</h2>
-        <p>{text.length < 0 ? text : "Enter some text"} </p>
+        <p>{text} </p>
         <p>
           Time required to read :{" "}
           {text
