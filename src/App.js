@@ -1,10 +1,10 @@
 import "./App.css";
-// import About from "./components/About";
+import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import React, { useState } from "react";
 import Alert from "./components/Alert";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -25,25 +25,30 @@ function App() {
       setMode("dark");
       document.body.style.backgroundColor = "black";
       document.body.style.color = "white";
-      showAlert("Dark Mode has been disabled", "success");
       document.title = "textUtils - Dark Mode";
+      showAlert("Light Mode has been disabled", "success");
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
       document.body.style.color = "black";
-      showAlert("Light Mode has been disabled", "success");
       document.title = "textUtils - Light Mode";
+      showAlert("Dark Mode has been disabled", "success");
     }
   }
 
   return (
     <>
-      {/* <Router> */}
-      <Navbar title="textUtils" mode={mode} toggleMode={toggleMode}></Navbar>
-      <Alert alert={alert} />
+      <Router>
+        <Navbar
+          title="textUtils"
+          mode={mode}
+          aboutText="About"
+          toggleMode={toggleMode}
+        ></Navbar>
+        <Alert alert={alert} />
 
-      <div className="container my-3">
-        {/* <Routes>
+        <div className="container my-3">
+          <Routes>
             <Route
               exact
               path="/"
@@ -55,10 +60,9 @@ function App() {
               }
             />
             <Route exact path="/about" element={<About />} />
-          </Routes> */}
-        <TextForm heading="Enter the text to analyse: " mode={mode}></TextForm>
-      </div>
-      {/* </Router> */}
+          </Routes>
+        </div>
+      </Router>
     </>
   );
 }

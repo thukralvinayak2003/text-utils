@@ -51,21 +51,21 @@ export default function TextForm(props) {
             id="mybox"
             rows="8"
             style={{
-              backgroundColour: props.mode === "dark" ? "Grey" : "white",
-              color: props.mode === "dark" ? "white" : "black",
+              backgroundColour: "white",
+              color: "black",
             }}
           ></textarea>
         </div>
-        <button className="btn btn-primary" onClick={handleUpCase}>
+        <button className="btn btn-primary mx-3 my-2" onClick={handleUpCase}>
           Convert To Uppercase
         </button>
-        <button className="btn btn-primary mx-3" onClick={handleLoCase}>
+        <button className="btn btn-primary mx-3 my-2" onClick={handleLoCase}>
           Convert To lowercase
         </button>
-        <button className="btn btn-primary mx-3" onClick={handleClear}>
+        <button className="btn btn-primary mx-3 my-2" onClick={handleClear}>
           Clear Text
         </button>
-        <button className="btn btn-primary mx-3" onClick={handleCopy}>
+        <button className="btn btn-primary mx-3 my-2" onClick={handleCopy}>
           Copy Text
         </button>
         <button className="btn btn-primary mx-3" onClick={handleExtraSpaces}>
